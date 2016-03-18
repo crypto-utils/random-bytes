@@ -98,7 +98,7 @@ describe('randomBytes(size)', function () {
         cryptoRandomBytes.seeded = undefined
       })
 
-      it('should still generate bytes when later seeded', function () {
+      it('should still generate bytes when later seeded', function (done) {
         cryptoRandomBytes.seeded = 1
 
         randomBytes(18, function (err, buf) {
@@ -109,7 +109,7 @@ describe('randomBytes(size)', function () {
         })
       })
 
-      it('should attempt generation three times', function () {
+      it('should attempt generation three times', function (done) {
         cryptoRandomBytes.seeded = 2
 
         randomBytes(18, function (err, buf) {
@@ -120,7 +120,7 @@ describe('randomBytes(size)', function () {
         })
       })
 
-      it('should error if never seeded', function () {
+      it('should error if never seeded', function (done) {
         cryptoRandomBytes.seeded = false
 
         randomBytes(18, function (err) {
