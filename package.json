@@ -1,6 +1,6 @@
 {
   "name": "random-bytes",
-  "description": "URL and cookie safe UIDs",
+  "description": "Generate strong pseudo-random bytes",
   "version": "1.0.0",
   "contributors": [
     "Douglas Christopher Wilson <doug@somethingdoug.com>"
