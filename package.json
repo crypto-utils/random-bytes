@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": "crypto-utils/random-bytes",
   "devDependencies": {
-    "bluebird": "3.3.5",
+    "bluebird": "3.4.0",
     "istanbul": "0.4.3",
     "mocha": "2.4.5",
     "proxyquire": "1.2.0"
