@@ -18,7 +18,7 @@ var crypto = require('crypto')
  * @private
  */
 
-var generateAttempts = crypto.randomBytes === crypto.pseudoRandomBytes ? 1 : 3
+var GENERATE_ATTEMPTS = crypto.randomBytes === crypto.pseudoRandomBytes ? 1 : 3
 
 /**
  * Module exports.
@@ -50,11 +50,11 @@ function randomBytes (size, callback) {
 
   if (callback) {
     // classic callback style
-    return generateRandomBytes(size, generateAttempts, callback)
+    return generateRandomBytes(size, GENERATE_ATTEMPTS, callback)
   }
 
   return new Promise(function executor (resolve, reject) {
-    generateRandomBytes(size, generateAttempts, function onRandomBytes (err, str) {
+    generateRandomBytes(size, GENERATE_ATTEMPTS, function onRandomBytes (err, str) {
       if (err) return reject(err)
       resolve(str)
     })
@@ -72,7 +72,7 @@ function randomBytes (size, callback) {
 function randomBytesSync (size) {
   var err = null
 
-  for (var i = 0; i < generateAttempts; i++) {
+  for (var i = 0; i < GENERATE_ATTEMPTS; i++) {
     try {
       return crypto.randomBytes(size)
     } catch (e) {
