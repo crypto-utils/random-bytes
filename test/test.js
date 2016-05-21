@@ -169,7 +169,7 @@ describe('randomBytes.sync()', function () {
   })
 })
 
-function cryptoRandomBytes(size, callback) {
+function cryptoRandomBytes (size, callback) {
   if (cryptoRandomBytes.seeded === undefined) {
     return crypto.randomBytes(size, callback)
   }
@@ -189,6 +189,6 @@ function cryptoRandomBytes(size, callback) {
   callback(err)
 }
 
-function unexpectedResolve() {
+function unexpectedResolve () {
   throw new Error('unexpected resolve')
 }

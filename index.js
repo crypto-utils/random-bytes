@@ -37,7 +37,7 @@ module.exports.sync = randomBytesSync
  * @public
  */
 
-function randomBytes(size, callback) {
+function randomBytes (size, callback) {
   // validate callback is a function, if provided
   if (callback !== undefined && typeof callback !== 'function') {
     throw new TypeError('argument callback must be a function')
@@ -53,8 +53,8 @@ function randomBytes(size, callback) {
     return generateRandomBytes(size, generateAttempts, callback)
   }
 
-  return new Promise(function executor(resolve, reject) {
-    generateRandomBytes(size, generateAttempts, function onRandomBytes(err, str) {
+  return new Promise(function executor (resolve, reject) {
+    generateRandomBytes(size, generateAttempts, function onRandomBytes (err, str) {
       if (err) return reject(err)
       resolve(str)
     })
@@ -69,7 +69,7 @@ function randomBytes(size, callback) {
  * @public
  */
 
-function randomBytesSync(size) {
+function randomBytesSync (size) {
   var err = null
 
   for (var i = 0; i < generateAttempts; i++) {
@@ -92,8 +92,8 @@ function randomBytesSync(size) {
  * @private
  */
 
-function generateRandomBytes(size, attempts, callback) {
-  crypto.randomBytes(size, function onRandomBytes(err, buf) {
+function generateRandomBytes (size, attempts, callback) {
+  crypto.randomBytes(size, function onRandomBytes (err, buf) {
     if (!err) return callback(null, buf)
     if (!--attempts) return callback(err)
     setTimeout(generateRandomBytes.bind(null, size, attempts, callback), 10)
