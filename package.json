@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": "crypto-utils/random-bytes",
   "devDependencies": {
-    "bluebird": "3.4.1",
+    "bluebird": "3.4.6",
     "eslint": "2.10.2",
     "eslint-config-standard": "5.3.1",
     "eslint-plugin-promise": "1.1.0",
