@@ -27,6 +27,8 @@ $ npm install random-bytes
 
 ## API
 
+<!-- eslint-disable no-unused-vars -->
+
 ```js
 var randomBytes = require('random-bytes')
 ```
@@ -35,6 +37,8 @@ var randomBytes = require('random-bytes')
 
 Generates strong pseudo-random bytes. The `size` argument is a number indicating
 the number of bytes to generate.
+
+<!-- eslint-disable no-undef -->
 
 ```js
 randomBytes(12, function (error, bytes) {
@@ -51,6 +55,8 @@ a number indicating the number of bytes to generate.
 **Note**: To use promises in Node.js _prior to 0.12_, promises must be
 "polyfilled" using `global.Promise = require('bluebird')`.
 
+<!-- eslint-disable no-undef -->
+
 ```js
 randomBytes(18).then(function (string) {
   // do something with the string
@@ -60,6 +66,8 @@ randomBytes(18).then(function (string) {
 ### randomBytes.sync(size)
 
 A synchronous version of above.
+
+<!-- eslint-disable no-undef, no-unused-vars -->
 
 ```js
 var bytes = randomBytes.sync(18)
