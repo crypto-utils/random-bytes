@@ -11,6 +11,7 @@ var randomBytes = proxyquire('..', {
 })
 
 // Add Promise to mocha's global list
+// eslint-disable-next-line no-self-assign
 global.Promise = global.Promise
 
 describe('randomBytes(size)', function () {
