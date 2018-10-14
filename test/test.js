@@ -26,7 +26,7 @@ describe('randomBytes(size)', function () {
     it('should return a Buffer of the correct length', function () {
       return randomBytes(18).then(function (buf) {
         assert.ok(Buffer.isBuffer(buf))
-        assert.equal(18, buf.length)
+        assert.strictEqual(18, buf.length)
       })
     })
 
@@ -40,7 +40,7 @@ describe('randomBytes(size)', function () {
 
         return randomBytes(18).then(function (buf) {
           assert.ok(Buffer.isBuffer(buf))
-          assert.equal(18, buf.length)
+          assert.strictEqual(18, buf.length)
         })
       })
 
@@ -49,7 +49,7 @@ describe('randomBytes(size)', function () {
 
         return randomBytes(18).then(function (buf) {
           assert.ok(Buffer.isBuffer(buf))
-          assert.equal(18, buf.length)
+          assert.strictEqual(18, buf.length)
         })
       })
 
@@ -57,7 +57,7 @@ describe('randomBytes(size)', function () {
         cryptoRandomBytes.seeded = false
 
         return randomBytes(18).then(unexpectedResolve, function (err) {
-          assert.notEqual(err.message.indexOf('PRNG not seeded'), -1)
+          assert.notStrictEqual(err.message.indexOf('PRNG not seeded'), -1)
         })
       })
     })
@@ -88,7 +88,7 @@ describe('randomBytes(size)', function () {
       randomBytes(18, function (err, buf) {
         if (err) return done(err)
         assert.ok(Buffer.isBuffer(buf))
-        assert.equal(18, buf.length)
+        assert.strictEqual(18, buf.length)
         done()
       })
     })
@@ -104,7 +104,7 @@ describe('randomBytes(size)', function () {
         randomBytes(18, function (err, buf) {
           if (err) return done(err)
           assert.ok(Buffer.isBuffer(buf))
-          assert.equal(18, buf.length)
+          assert.strictEqual(18, buf.length)
           done()
         })
       })
@@ -115,7 +115,7 @@ describe('randomBytes(size)', function () {
         randomBytes(18, function (err, buf) {
           if (err) return done(err)
           assert.ok(Buffer.isBuffer(buf))
-          assert.equal(18, buf.length)
+          assert.strictEqual(18, buf.length)
           done()
         })
       })
@@ -125,7 +125,7 @@ describe('randomBytes(size)', function () {
 
         randomBytes(18, function (err) {
           assert.ok(err)
-          assert.notEqual(err.message.indexOf('PRNG not seeded'), -1)
+          assert.notStrictEqual(err.message.indexOf('PRNG not seeded'), -1)
           done()
         })
       })
@@ -137,7 +137,7 @@ describe('randomBytes.sync()', function () {
   it('should return a Buffer of the correct length', function () {
     var buf = randomBytes.sync(18)
     assert.ok(Buffer.isBuffer(buf))
-    assert.equal(18, buf.length)
+    assert.strictEqual(18, buf.length)
   })
 
   describe('when PRNG not seeded', function () {
@@ -150,7 +150,7 @@ describe('randomBytes.sync()', function () {
 
       var buf = randomBytes.sync(18)
       assert.ok(Buffer.isBuffer(buf))
-      assert.equal(18, buf.length)
+      assert.strictEqual(18, buf.length)
     })
 
     it('should attempt generation three times', function () {
@@ -158,7 +158,7 @@ describe('randomBytes.sync()', function () {
 
       var buf = randomBytes.sync(18)
       assert.ok(Buffer.isBuffer(buf))
-      assert.equal(18, buf.length)
+      assert.strictEqual(18, buf.length)
     })
 
     it('should error if never seeded', function () {
