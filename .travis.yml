@@ -69,6 +69,10 @@ before_install:
     if   node_version_lt '0.10'; then npm_use_module 'mocha' '2.5.3'
     elif node_version_lt '4.0' ; then npm_use_module 'mocha' '3.5.3'
     fi
+  - |
+    # Configure proxyquire for testing
+    if node_version_lt '0.10'; then npm_use_module 'proxyquire' '1.4.0'
+    fi
   # Update Node.js modules
   - |
     # Prune & rebuild node_modules
