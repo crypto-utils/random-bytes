@@ -18,7 +18,8 @@ var crypto = require('crypto')
  * @private
  */
 
-var GENERATE_ATTEMPTS = crypto.randomBytes === crypto.pseudoRandomBytes ? 1 : 3
+var GENERATE_ATTEMPTS = crypto.randomBytes === crypto.pseudoRandomBytes // eslint-disable-line node/no-deprecated-api
+  ? 1 : 3
 
 /**
  * Module exports.
